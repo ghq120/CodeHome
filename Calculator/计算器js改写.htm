@@ -1,0 +1,117 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>计算器</title>
+</head>
+<body>
+	<input type = "text" id= "scn" size = "85" value="0">
+	<table  border = 1 cellpadding=2 bgcolor="#F5F5DC">
+		<tr>
+			<th>
+				<input type="radio" name="进制" >十六进制
+				<input type="radio" name="进制" >十进制
+				<input type="radio" name="进制" >八进制
+				<input type="radio" name="进制" >二进制</th>
+			<th>
+				<input type="radio" name="du" >角度
+				<input type="radio" name="du" >弧度
+				<input type="radio" name="du" >梯度</th>
+		</tr>
+	</table>
+	<table  border = 0  cellpadding = 2 bgcolor="#F5F5DC">
+    	<tr>
+        <th width="80"><input type = "checkbox" name ="check">Inv</th>
+				<th width="80"><input type = "checkbox" name ="check">Hyp</th>
+				<td width="43"></td><td width="60"></td>
+				<!-- <th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "Backspace" onclick="back()"></th> -->
+				<th width="80"><input type ="button" name="back" style = "width:80px;height:25px;color:red" value = "Backspace" ></th>
+				<th width="80"><input type ="button" name="ce" style = "width:80px;height:25px;color:red" value = "CE" ></th>
+				<th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "C"></th>
+			</tr>
+  </table>
+	<table  border = 0 cellpadding=1 cellspacing=1 bgcolor="#F5F5DC">
+    <tr>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:blue;" value = "Sta"></th>
+			<td width="1"></td>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:Magenta" value = "F-E"></th>
+      <th width="30"><input type ="button" name="kh" style = "width:40px;height:25px;color:Magenta" value = "(" ></th>
+      <th width="30"><input type ="button" name="kh" style = "width:40px;height:25px;color:Magenta" value = ")" ></th>
+	  <td width="1"></td>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "MC"></th>
+      <td width="30"></td><td width="30"></td>
+      <th width="30"><input type ="button" name="7" style = "width:40px;height:25px;color:blue" value = "7" ></th>
+      <th width="30"><input type ="button" name="8" style = "width:40px;height:25px;color:blue" value = "8" ></th>
+      <th width="30"><input type ="button" name="9" style = "width:40px;height:25px;color:blue" value = "9" ></th>
+      <th width="30"><input type ="button" name="/" style = "width:40px;height:25px;color:red" value = "/" ></th>
+      <th width="30"><input type ="button" name="mod" style = "width:40px;height:25px;color:red" value = "Mod" ></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "And"></th>
+     </tr>
+		<tr>
+    	<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Ave"></th>
+    	<td width="1"></td>
+    	<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "dms"></th> 
+    	<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "Exp"></th> 
+    	<th><input type = "button" name="In" style = "width:40px;height:25px;color:Magenta" value = "ln" ></th>
+    	<td width="1"></td>
+    	<th><input type = "button" style = "width:40px;height:25px;color:red" value = "MR"></th>
+    	<td width="30"></td><td width="30"></td>
+    	<th><input type = "button" name="4" style = "width:40px;height:25px;color:blue" value = "4" ></th> 
+    	<th><input type = "button" name="5" style = "width:40px;height:25px;color:blue" value = "5" ></th> 
+    	<th><input type = "button" name="6" style = "width:40px;height:25px;color:blue" value = "6" ></th> 
+    	<th><input type = "button" name="*" style = "width:40px;height:25px;color:red" value = "*" ></th> 
+    	<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Or"></th> 
+    	<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Xor"></th> 		
+			</tr>
+		<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Sum"></th>
+				<td width="1"></td>
+				<th><input type = "button" name="sin" style = "width:40px;height:25px;color:Magenta" value = "sin" ></th> 
+				<th><input type = "button" name="x^y" style = "width:40px;height:25px;color:Magenta" value = "x^y" ></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "log" ></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "MS"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" name="1" style = "width:40px;height:25px;color:blue" value = "1" ></th> 
+				<th><input type = "button" name="2" style = "width:40px;height:25px;color:blue" value = "2" ></th> 
+				<th><input type = "button" name="3" style = "width:40px;height:25px;color:blue" value = "3" ></th> 
+				<th><input type = "button" name="-" style = "width:40px;height:25px;color:red" value = "-" ></th>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Lsh"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Not"></th> 
+		</tr>
+		<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "s"></th>
+				<td width="1"></td>
+				<th><input type = "button" name="cos" style = "width:40px;height:25px;color:Magenta" value = "cos" ></th> 
+				<th><input type = "button" name="x^3" style = "width:40px;height:25px;color:Magenta" value = "x^3" ></th> 
+				<th><input type = "button" name="jc" style = "width:40px;height:25px;color:Magenta" value = "n!" ></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "M+"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" name="0" style = "width:40px;height:25px;color:blue" value = "0" ></th> 
+				<th><input type = "button" name="+/-" style = "width:40px;height:25px;color:blue" value = "+/-" ></th> 
+				<th><input type = "button" name="." style = "width:40px;height:25px;color:blue" value = "." )></th> 
+				<th><input type = "button" name="+" style = "width:40px;height:25px;color:red" value = "+" ></th> 
+				<th><input type = "button" name="=" style = "width:40px;height:25px;color:red" value = "=" ></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Int"></th> 
+			</tr>
+			<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Dat"></th>
+				<td width="1"></td>
+				<th><input type = "button" name="tan" style = "width:40px;height:25px;color:Magenta" value = "tan" ></th> 
+				<th><input type = "button" name="x^2" style = "width:40px;height:25px;color:Magenta" value = "x^2" ></th> 
+				<th><input type = "button" name="1/x" style = "width:40px;height:25px;color:Magenta" value = "1/x" ></th>
+				<td width="1"></td>
+				<th><input type = "button" name="pi" style = "width:40px;height:25px;color:red" value = "pi" ></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "A"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "B"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "C"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "D"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "E"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "F"></th> 
+			</tr>
+	</table>
+	<script language="JavaScript" src="js计算器.js">
+	</script>
+</body>
+</html>

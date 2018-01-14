@@ -1,0 +1,202 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>计算器</title>
+	<script type="text/javascript">
+		var sym,temp,symbol;
+		var temp2 = 0,temp3 = 0;
+	</script>
+
+</head>
+<body>
+	<input type = "text" id= "scn" size = "85" value="0">
+	<table  border = 1 cellpadding=2 bgcolor="#F5F5DC">
+		<tr>
+			<th>
+				<input type="radio" name="进制" >十六进制
+				<input type="radio" name="进制" >十进制
+				<input type="radio" name="进制" >八进制
+				<input type="radio" name="进制" >二进制</th>
+			<th>
+				<input type="radio" name="字" onfocus="document.getElementById('scn').value=String(Number(document.getElementById('scn').value)/Math.PI*180)">角度
+				<input type="radio" name="字" onfocus="document.getElementById('scn').value=String(Number(document.getElementById('scn').value)*Math.PI/180)">弧度
+				<input type="radio" name="字">梯度</th>
+		</tr>
+	</table>
+	<table  border = 0  cellpadding = 2 bgcolor="#F5F5DC">
+    	<tr>
+        		<th width="80"><input type = "checkbox" name ="check">Inv</th>
+				<th width="80"><input type = "checkbox" name ="check">Hyp</th>
+				<td width="43"></td><td width="60"></td>
+				<!-- <th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "Backspace" onclick="back()"></th> -->
+				<th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "Backspace" onclick="document.getElementById('scn').value=document.getElementById('scn').value.substr(0,(document.getElementById('scn').value).length-1)"></th>
+			 
+				<th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "CE" onclick="document.getElementById('scn').value='0'"></th>
+				<th width="80"><input type ="button" style = "width:80px;height:25px;color:red" value = "C"></th>
+			</tr>
+  </table>
+	<table  border = 0 cellpadding=1 cellspacing=1 bgcolor="#F5F5DC">
+    <tr>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:blue;" value = "Sta"></th>
+			<td width="1"></td>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:Magenta" value = "F-E"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:Magenta" value = "(" onclick="document.getElementById('scn').value+='('"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:Magenta" value = ")" onclick="document.getElementById('scn').value+=')'"></th>
+			<td width="1"></td>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "MC"></th>
+      <td width="30"></td><td width="30"></td>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:blue" value = "7" onclick="Input_num('7')"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:blue" value = "8" onclick="Input_num('8')"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:blue" value = "9" onclick="Input_num('9')"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "/" onclick="Input_symb('/')"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "Mod" onclick="Input_symb('Mod')"></th>
+      <th width="30"><input type ="button" style = "width:40px;height:25px;color:red" value = "And"></th>
+     </tr>
+		<tr>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Ave"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "dms"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "Exp"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "ln" onclick="document.getElementById('scn').value=Math.log(Number(document.getElementById('scn').value))"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "MR"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "4" onclick="Input_num('4')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "5" onclick="Input_num('5')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "6" onclick="Input_num('6')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "*" onclick="Input_symb('*')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Or"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Xor"></th> 		
+			</tr>
+			<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Sum"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "sin" onclick="document.getElementById('scn').value=String(Math.sin(Number(document.getElementById('scn').value)*Math.PI/180))"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "x^y" onclick="Input_symb('x^y')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "log" ></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "MS"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "1" onclick="Input_num('1')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "2" onclick="Input_num('2')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "3" onclick="Input_num('3')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "-" onclick="Input_symb('-')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Lsh"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Not"></th> 
+			</tr>
+			<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "s"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "cos" onclick="document.getElementById('scn').value=String(Math.cos(Number(document.getElementById('scn').value)*Math.PI/180))"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "x^3" onclick="document.getElementById('scn').value=Math.pow(document.getElementById('scn').value,3)"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "n!" onclick="jc()"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "M+"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "0" onclick="Input_num('0')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "+/-" onclick="document.getElementById('scn').value=document.getElementById('scn').value*(-1)"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "." onclick="document.getElementById('scn').value+='.'")></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "+" onclick="Input_symb('+')"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "=" onclick="cacul()"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "Int"></th> 
+			</tr>
+			<tr>
+        <th><input type = "button" style = "width:40px;height:25px;color:blue" value = "Dat"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "tan" onclick="document.getElementById('scn').value=String(Math.sin(Number(document.getElementById('scn').value)*Math.PI/180))"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "x^2" onclick="document.getElementById('scn').value=Math.pow(document.getElementById('scn').value,2)"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:Magenta" value = "1/x" onclick="document.getElementById('scn').value=String(Number(1/document.getElementById('scn').value))"></th>
+				<td width="1"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:red" value = "pi" onclick="document.getElementById('scn').value=Math.PI"></th>
+				<td width="30"></td><td width="30"></td>
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "A"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "B"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "C"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "D"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "E"></th> 
+				<th><input type = "button" style = "width:40px;height:25px;color:blue" value = "F"></th> 
+			</tr>
+	</table>
+	<script language="JavaScript">
+		var isClickOper=false;	
+		var isClickPoint=false;
+		//退格按钮
+		function back() {
+      var name=document.getElementById('scn');
+      var temp=name.value;
+      name.value="";
+      for(var i=0;i<temp.length-1;i++)
+        name.value+=temp[i];
+    }
+    
+    //判断输入之前的数字是否为0，如果是则替换掉0，如果不是在上一个数字后面进行追加
+    function Input_num(num){
+			if(document.getElementById('scn').value=='0'||isClickOper){
+				document.getElementById('scn').value=num;
+				isClickOper=false
+			}else if(document.getElementById('scn').value.length<32){
+				document.getElementById('scn').value+=num;
+			}
+		} 
+    //输完数字以后，将屏幕上的数字存在一个临时变量中，将屏幕清空
+    /*function Input_symb(sym){
+    	document.getElementById('scn').value='0';
+    	symbol=sym;
+    	queal();
+    }*/
+    function cacul(){
+			queal();	
+			temp3=0;
+		}
+		function Input_symb(sym){
+			symbol=sym;
+			isClickOper=true;
+			queal()
+		}
+	
+    //判断输入的符号作出对应的运算
+    function queal(){
+    	temp=Number(document.getElementById('scn').value);
+
+    	if(temp3!=0){
+    		switch(symbol){
+    		case '+': temp2=temp3+temp;		
+    		break;
+    		case '-': temp2=temp3-temp;
+    		break;
+    		case '*': temp2=temp3*temp;
+    		break;
+    		case '/': temp2=temp3/temp;
+    		break;
+    		case 'x^y': temp2 = Math.pow(temp3,temp);
+    		break;
+    		case 'Mod': temp2 = temp3%temp;
+    		break;
+    		}
+    	}else{
+				temp2=temp;
+    		}
+    		temp=String(temp2);
+				document.getElementById('scn').value=temp;
+				temp3=temp2	;
+    	}
+    
+    //n!的方法
+    function jc (){
+    	var a =document.getElementById('scn').value;
+    	var sum = 1;
+    	if (a<0) {
+    		document.getElementById('scn').value = "函数输入无效";
+    	}else if(a==0){
+    		document.getElementById('scn').value = 1;
+    	} else{
+    			for (var i=1;i<=a;i++) {
+    				sum*=i;	
+    			}
+    			document.getElementById('scn').value = sum;
+    		}
+    }
+    
+	</script>
+</body>
+</html>
