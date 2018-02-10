@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 禁止动态方法调用， url中不能这样写UserAction!reg.action -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+	
+	<!-- 定义开发模式，开发阶段定义为开发模式       当项目上线以后，定义为非开发模式 -->
+	<constant name="struts.devMode" value="true"/>
+	
+	<!-- 强制对Action类的访问的扩展名必须是action -->
+	<constant name="struts.action.extension" value="action"/>
+	
+	<!-- 让核心控制器加载upload.properties文件 -->
+	<constant name="struts.custom.i18n.resources" value="upload"/>
+	
+	<package name="user" extends="struts-default">
+		<global-results>
+			<!-- 文件上传失败转发到reg页面 -->
+			<result name="input">/reg.jsp</result>
+		</global-results>
+		<action name="UserAction_*" class="com.ghq.action.UserAction" method="{1}">
+			<result name="regSuc">/regSuc.jsp</result>
+			<result name="regUI">/reg.jsp</result>
+			
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions">jpg,gif,jpeg,bmp,png</param>
+				<param name="maximumSize">5210</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>			
+		</action>
+	</package>
+
+</struts>
